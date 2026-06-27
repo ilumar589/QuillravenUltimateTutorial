@@ -54,7 +54,9 @@ configure(subprojects) {
     options.incremental = true
   }
   compileKotlin.compilerOptions.jvmTarget.set(org.jetbrains.kotlin.gradle.dsl.JvmTarget.JVM_26)
+  compileKotlin.compilerOptions.freeCompilerArgs.add('-Xname-based-destructuring=complete')
   compileTestKotlin.compilerOptions.jvmTarget.set(org.jetbrains.kotlin.gradle.dsl.JvmTarget.JVM_26)
+  compileTestKotlin.compilerOptions.freeCompilerArgs.add('-Xname-based-destructuring=complete')
   
 }
 

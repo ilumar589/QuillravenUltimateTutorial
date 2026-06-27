@@ -2,6 +2,7 @@
 .gradle/
 gradle-app.setting
 /build/
+**/build/
 /android/build/
 /core/build/
 /lwjgl2/build/
@@ -66,6 +67,7 @@ www-test/
 .classpath
 .project
 .metadata/
+**/bin/
 /android/bin/
 /core/bin/
 /lwjgl2/bin/
@@ -103,6 +105,7 @@ www-test/
 /shared/nbproject/private/
 
 /nbbuild/
+**/nbbuild/
 /android/nbbuild/
 /core/nbbuild/
 /lwjgl2/nbbuild/
@@ -116,6 +119,7 @@ www-test/
 /shared/nbbuild/
 
 /dist/
+**/dist/
 /android/dist/
 /core/dist/
 /lwjgl2/dist/
@@ -129,6 +133,7 @@ www-test/
 /shared/dist/
 
 /nbdist/
+**/nbdist/
 /android/nbdist/
 /core/nbdist/
 /lwjgl2/nbdist/
