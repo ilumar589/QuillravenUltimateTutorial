@@ -4,7 +4,7 @@ package io.github.blippy.teavm
 
 import com.github.xpenatan.gdx.teavm.backends.web.WebApplicationConfiguration
 import com.github.xpenatan.gdx.teavm.backends.web.WebApplication
-import io.github.blippy.Main
+import io.github.blippy.GdxGame
 
 /** Launches the TeaVM/HTML application. */
 fun main() {
@@ -16,5 +16,5 @@ fun main() {
         width = 0
         height = 0
     }
-    WebApplication(Main(), config)
+    WebApplication(GdxGame(), config)
 }
