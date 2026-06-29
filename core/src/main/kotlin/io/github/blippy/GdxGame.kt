@@ -8,11 +8,14 @@ import com.badlogic.gdx.graphics.g2d.SpriteBatch
 import com.badlogic.gdx.graphics.glutils.ShapeRenderer
 import com.badlogic.gdx.scenes.scene2d.Stage
 import com.badlogic.gdx.scenes.scene2d.ui.Skin
+import com.badlogic.gdx.utils.ScreenUtils
 import com.badlogic.gdx.utils.viewport.FitViewport
 import com.badlogic.gdx.utils.viewport.Viewport
+import io.github.blippy.screen.GameScreen
 import io.github.blippy.ui.GameSkin
 import ktx.app.KtxGame
 import ktx.app.KtxScreen
+import kotlin.math.log
 
 class GdxGame : KtxGame<KtxScreen>() {
     val batch: Batch by lazy { SpriteBatch() }
@@ -26,5 +29,31 @@ class GdxGame : KtxGame<KtxScreen>() {
     override fun create() {
         Gdx.app.logLevel = Application.LOG_DEBUG
         Gdx.input.inputProcessor = inputMultiplexer
+
+        addScreen(GameScreen(this))
+        setScreen<GameScreen>()
+    }
+
+    override fun render() {
+        ScreenUtils.clear(0f, 0f, 0f, 1f, true)
+        currentScreen.render(Gdx.graphics.deltaTime.coerceIn(0f, 1 / 30f))
+    }
+
+    override fun resize(width: Int, height: Int) {
+        gameViewport.update(width, height, true)
+        uiViewport.update(width, height, true)
+        super.resize(width, height)
+    }
+
+    override fun dispose() {
+        super.dispose()
+        batch.dispose()
+        shapeRenderer.dispose()
+        stage.dispose()
+        skin.dispose()
+    }
+
+    companion object {
+        fun Int.toWorldUnits() = this / 64f
     }
 }

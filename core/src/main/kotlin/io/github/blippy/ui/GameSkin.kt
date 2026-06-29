@@ -8,9 +8,10 @@ import ktx.freetype.generateFont
 class GameSkin : Skin() {
     init {
         // generate and register fonts
-        val ftfGenerator = FreeTypeFontGenerator("ui/alagard.ttf".toInternalFile())
-        add(FONT_SMALL, ftfGenerator.generateFont { size = 32 })
-        add(FONT_DEFAULT, ftfGenerator.generateFont { size = 40 })
+        //TODO at a later time
+//        val ftfGenerator = FreeTypeFontGenerator("ui/alagard.ttf".toInternalFile())
+//        add(FONT_SMALL, ftfGenerator.generateFont { size = 32 })
+//        add(FONT_DEFAULT, ftfGenerator.generateFont { size = 40 })
     }
 
     companion object {
